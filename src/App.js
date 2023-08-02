@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './App.css';
 
 function App() {
-  const [input, setInput] = useState('');
+  const [input, setInput] = useState('0');
 
   const handleInput = (val) => {
 
@@ -13,6 +13,10 @@ function App() {
     }
   }
 
+  const handleClear = () => {
+    setInput('');
+  }
+
   return (
     <div className="bg-slate-200 min-h-screen flex flex-row justify-center items-center">
       <div className="container w-full sm:w-1/2 md:w-1/3 bg-slate-400 rounded-xl">
@@ -21,7 +25,12 @@ function App() {
         </div>
         <div id="input" className="m-5">
           <div>
-            <button className="w-1/4 h-16 bg-slate-500 border-2 border-slate-700 hover:bg-slate-600">AC</button>
+            <button 
+              className="w-1/4 h-16 bg-slate-500 border-2 border-slate-700 hover:bg-slate-600"
+              onClick={handleClear}
+            >
+              AC
+            </button>
             <button className="w-1/4 h-16 bg-slate-500 border-2 border-slate-700 hover:bg-slate-600">+/-</button>
             <button 
               className="w-1/4 h-16 bg-slate-500 border-2 border-slate-700 hover:bg-slate-600"
