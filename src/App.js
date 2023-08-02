@@ -65,12 +65,7 @@ function App() {
             >
               0
             </button>
-            <button 
-              className="w-1/4 h-16 bg-slate-500 border-2 border-slate-700 hover:bg-slate-600"
-              onClick={() => handleInput(".")}
-            >
-              .
-            </button>
+            <InputBtn symbol="." value="." handleInput={handleInput}/>
             <button 
               className="w-1/4 h-16 bg-slate-500 border-2 border-slate-700 hover:bg-slate-600"
             >
