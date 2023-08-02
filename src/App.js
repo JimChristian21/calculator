@@ -5,7 +5,7 @@ function App() {
     <div className="bg-slate-200 min-h-screen flex flex-row justify-center items-center">
       <div className="container w-full sm:w-1/2 md:w-1/3 bg-slate-400 rounded-xl">
         <div id="screen" className="bg-white m-5 rounded-md h-20 flex items-end justify-end">
-          <p className="text-3xl">sample</p>
+          <p className="text-3xl mr-1">sample</p>
         </div>
         <div id="input" className="m-5">
           <div>
