@@ -15,7 +15,7 @@ function App() {
   }
 
   const handleClear = () => {
-    setInput('');
+    setInput('0');
   }
 
   return (
