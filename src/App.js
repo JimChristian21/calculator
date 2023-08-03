@@ -30,9 +30,15 @@ function App() {
 
     if (inArray) {
 
-      if ((inputLengthNotZero
+      if (inputLengthNotZero
         && !symbols.includes(input[input.length-1])
-        || input[input.length-1] === symbols[5])
+      ) {
+
+        ret = true;
+      } else if (
+          inputLengthNotZero 
+            && input[input.length-1] === symbols[5]
+              && val !== symbols[5] 
       ) {
 
         ret = true;
