@@ -38,18 +38,16 @@ function App() {
             <button
               className="w-1/4 h-16 bg-slate-500 border-2 border-slate-700 hover:bg-slate-600"
               onClick={handleRemove}
-            >{"<-"}</button>
+            >
+              CE
+            </button>
             <button 
               className="w-1/4 h-16 bg-slate-500 border-2 border-slate-700 hover:bg-slate-600"
               onClick={handleClear}
             >
               AC
             </button>
-            <button 
-              className="w-1/4 h-16 bg-slate-500 border-2 border-slate-700 hover:bg-slate-600"
-            >
-              %
-            </button>
+            <InputBtn symbol="%" value="%" handleInput={handleInput}/>
             <InputBtn symbol="/" value="/" handleInput={handleInput}/>
           </div>
           <div>
