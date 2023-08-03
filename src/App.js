@@ -3,7 +3,7 @@ import InputBtn from './components/InputBtn';
 import './App.css';
 
 function App() {
-  const [input, setInput] = useState('0');
+  const [input, setInput] = useState('');
 
   const handleInput = (val) => {
 
@@ -15,7 +15,16 @@ function App() {
   }
 
   const handleClear = () => {
-    setInput('0');
+    setInput('');
+  }
+
+  const handleRemove = () => {
+
+    if (input.length != 0 ) {
+
+      let newInput = input.substring(0, input.length - 1);
+      setInput(newInput);
+    }
   }
 
   return (
@@ -26,13 +35,16 @@ function App() {
         </div>
         <div id="input" className="m-5">
           <div>
+            <button
+              className="w-1/4 h-16 bg-slate-500 border-2 border-slate-700 hover:bg-slate-600"
+              onClick={handleRemove}
+            >{"<-"}</button>
             <button 
               className="w-1/4 h-16 bg-slate-500 border-2 border-slate-700 hover:bg-slate-600"
               onClick={handleClear}
             >
               AC
             </button>
-            <button className="w-1/4 h-16 bg-slate-500 border-2 border-slate-700 hover:bg-slate-600">+/-</button>
             <button 
               className="w-1/4 h-16 bg-slate-500 border-2 border-slate-700 hover:bg-slate-600"
             >
