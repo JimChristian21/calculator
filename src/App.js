@@ -4,14 +4,48 @@ import './App.css';
 
 function App() {
   const [input, setInput] = useState('');
+  let symbols = [
+    '+',
+    '-',
+    'x',
+    '/',
+    '.',
+    '%'
+  ];
 
   const handleInput = (val) => {
 
-    if (val.length != 0 ) {
+    if (validateInput(val)) {
 
       let newInput = input + val.toString();
       setInput(newInput);
     }
+  }
+
+  const validateInput = (val) => {
+
+    let ret = false;
+    let inArray = symbols.includes(val);
+    let inputLengthNotZero = input.length != 0;
+
+    if (inArray) {
+
+      if ((inputLengthNotZero
+        && !symbols.includes(input[input.length-1])
+        || input[input.length-1] === symbols[5])
+      ) {
+
+        ret = true;
+      }
+    } else {
+
+      if (input[input.length-1] != symbols[5]) {
+
+        ret = true;
+      }
+    }
+
+    return ret;
   }
 
   const handleClear = () => {
@@ -54,7 +88,7 @@ function App() {
             <InputBtn symbol="7" value="7" handleInput={handleInput}/>
             <InputBtn symbol="8" value="8" handleInput={handleInput}/>
             <InputBtn symbol="9" value="9" handleInput={handleInput}/>
-            <InputBtn symbol="X" value="X" handleInput={handleInput}/>
+            <InputBtn symbol="x" value="x" handleInput={handleInput}/>
           </div>
           <div>
             <InputBtn symbol="4" value="4" handleInput={handleInput}/>
