@@ -26,7 +26,7 @@ function App() {
 
     let ret = false;
     let inArray = symbols.includes(val);
-    let inputLengthNotZero = input.length != 0;
+    let inputLengthNotZero = input.length !== 0;
 
     if (inArray) {
 
@@ -45,7 +45,7 @@ function App() {
       }
     } else {
 
-      if (input[input.length-1] != symbols[5]) {
+      if (input[input.length-1] !== symbols[5]) {
 
         ret = true;
       }
@@ -60,7 +60,7 @@ function App() {
 
   const handleRemove = () => {
 
-    if (input.length != 0 ) {
+    if (input.length !== 0 ) {
 
       let newInput = input.substring(0, input.length - 1);
       setInput(newInput);
@@ -94,52 +94,32 @@ function App() {
             >
               <p className="text-4xl"></p>
             </div>
-            <button
-              className="w-1/4 h-16 bg-slate-500 border-2 border-slate-700 hover:bg-slate-600"
-              onClick={handleRemove}
-            >
-              CE
-            </button>
-            <button 
-              className="w-1/4 h-16 bg-slate-500 border-2 border-slate-700 hover:bg-slate-600"
-              onClick={handleClear}
-            >
-              AC
-            </button>
-            <InputBtn symbol="/" value="/" handleInput={handleInput}/>
+            <InputBtn symbol="CE" handler={handleRemove}/>
+            <InputBtn symbol="AC" handler={handleClear}/>
+            <InputBtn symbol="/" value="/" handler={handleInput}/>
           </div>
           <div>
-            <InputBtn symbol="7" value="7" handleInput={handleInput}/>
-            <InputBtn symbol="8" value="8" handleInput={handleInput}/>
-            <InputBtn symbol="9" value="9" handleInput={handleInput}/>
-            <InputBtn symbol="x" value="x" handleInput={handleInput}/>
+            <InputBtn symbol="7" value="7" handler={handleInput}/>
+            <InputBtn symbol="8" value="8" handler={handleInput}/>
+            <InputBtn symbol="9" value="9" handler={handleInput}/>
+            <InputBtn symbol="x" value="x" handler={handleInput}/>
           </div>
           <div>
-            <InputBtn symbol="4" value="4" handleInput={handleInput}/>
-            <InputBtn symbol="5" value="5" handleInput={handleInput}/>
-            <InputBtn symbol="6" value="6" handleInput={handleInput}/>
-            <InputBtn symbol="-" value="-" handleInput={handleInput}/>
+            <InputBtn symbol="4" value="4" handler={handleInput}/>
+            <InputBtn symbol="5" value="5" handler={handleInput}/>
+            <InputBtn symbol="6" value="6" handler={handleInput}/>
+            <InputBtn symbol="-" value="-" handler={handleInput}/>
           </div>
           <div>
-            <InputBtn symbol="1" value="1" handleInput={handleInput}/>
-            <InputBtn symbol="2" value="2" handleInput={handleInput}/>
-            <InputBtn symbol="3" value="3" handleInput={handleInput}/>
-            <InputBtn symbol="+" value="+" handleInput={handleInput}/>
+            <InputBtn symbol="1" value="1" handler={handleInput}/>
+            <InputBtn symbol="2" value="2" handler={handleInput}/>
+            <InputBtn symbol="3" value="3" handler={handleInput}/>
+            <InputBtn symbol="+" value="+" handler={handleInput}/>
           </div>
           <div>
-            <button 
-              className="w-2/4 h-16 bg-slate-500 border-2 border-slate-700 hover:bg-slate-600"
-              onClick={() => handleInput(0)}
-            >
-              0
-            </button>
-            <InputBtn symbol="." value="." handleInput={handleInput}/>
-            <button 
-              className="w-1/4 h-16 bg-slate-500 border-2 border-slate-700 hover:bg-slate-600"
-              onClick={handleResult}
-            >
-              =
-            </button>
+            <InputBtn symbol="0" value="0" handler={handleInput} width={"2/4"}/>
+            <InputBtn symbol="." value="." handler={handleInput}/>
+            <InputBtn symbol="=" handler={handleResult}/>
           </div>
         </div>
       </div>
