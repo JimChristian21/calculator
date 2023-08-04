@@ -4,12 +4,6 @@ const InputBtn = ({symbol, value, handler, width}) => {
 
     let cls = 'h-16 bg-slate-500 border-2 border-slate-700 hover:bg-slate-60'; 
 
-    if (symbol === '0') {
-
-        console.log(typeof width);
-        console.log(' w-' + width);
-    }
-
     cls += (typeof width === 'undefined')
         ? ' w-1/4'
             : ' w-' + width;
